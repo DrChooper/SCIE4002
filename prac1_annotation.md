@@ -74,9 +74,10 @@ From this point on, follow along with the commands. Ask for help if you fall beh
    
 2. You’ll need the FASTA file on your computer. You can either:
    - **Download it directly from GitHub:**  
-     [Download Av.cp.final.fasta](https://github.com/DrChooper/SCIE4002/raw/main/assets/Av.cp.final.fasta)
+   [![Download FASTA](https://img.shields.io/badge/Download-Av.cp.final.fasta-blue?style=for-the-badge&logo=github)](https://github.com/DrChooper/SCIE4002/raw/main/assets/Av.cp.final.fasta)
 
-   - **Copy it from the server using `scp`:**
+
+   - **OR copy it from the server using `scp`:**
 
      ```bash
      #replace with your username and server ip number
