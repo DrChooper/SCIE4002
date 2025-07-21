@@ -1,6 +1,6 @@
 # Workshop 1: Genome Annotation
 ## Introduction
-The Genome Annotation Workshop focuses on annotating the Aldrovanda vesiculosa chloroplast genome using GeSeq and Chloë, highlighting their different approaches and comparing outputs. Participants will manipulate GFF files and use text-wrangling techniques to prepare data for analysis and phylogenetic studies.
+The Genome Annotation Workshop focuses on annotating the *Aldrovanda vesiculosa* chloroplast genome using GeSeq and Chloë, highlighting their different approaches and comparing outputs. Participants will manipulate GFF files and use text-wrangling techniques to prepare data for analysis and phylogenetic studies.
 
 This practical is divided into three blocks. Each block has a clear goal and checkpoint. You are expected to code along through each section. If you fall behind, please alert the staff so we can assist. If needed, checkpoint files are provided so you can continue with the analysis. We plan to have a coffee and snack break between each session.
 
@@ -60,7 +60,7 @@ This practical is divided into three blocks. Each block has a clear goal and che
 
 ### Block 1 code along: Run Annotations (20 min)
 
-From this point on, follow along with the commands. Ask for help if you fall behind — checkpoint files are available.
+From this point on, follow along with the commands. Ask for help if you fall behind.
 
 #### Getting the FASTA file
 
@@ -68,7 +68,7 @@ From this point on, follow along with the commands. Ask for help if you fall beh
    ```bash
    #activate my environment
    conny activate
-   #to save you typing the location of all the data on ther server
+   #to save you typing path again and again set the directory
    sourcedir=/mnt/s-ws/everyone/annotation
    ```
    
@@ -416,7 +416,7 @@ Translate to protein:
 translate_nt_aa.jl *.rpoC2.nt.fa
 ```
 
-wTo keep it a bit easier to see maybe put all in the rpoC2 folder?
+To keep it a bit easier to see maybe put all in the rpoC2 folder?
 Concatenate and align:
 
 ```bash

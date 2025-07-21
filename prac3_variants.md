@@ -18,10 +18,11 @@ We will explore how each step affects variant detection and what it tells us abo
 1. [Workshop Plan](#workshop-plan)
 2. [Code along](#code-along)
 
-   * [Block 1: Mapping and Variant Calling on Raw Data](#block-1-mapping-and-variant-calling-on-raw-data)
-   * [Block 2: Quality Control and Re-calling with Cleaned Data](#block-2-quality-control-and-re-calling-with-cleaned-data)   
-   * [Block 3: High-Confidence Filtering and Variant Analysis](#block-3-high-confidence-filtering-and-variant-analysis)
-   * [Wrap-up and Comparison](#wrap-up-and-comparison)
+   * [Block 1: Mapping and Variant Calling on Raw Data (30 min)](#block-1-mapping-and-variant-calling-on-raw-data)
+   * [Block 2: Quality Control and Re-calling with Cleaned Data (45 min)](#block-2-quality-control-and-re-calling-with-cleaned-data)   
+   * [Block 3: High-Confidence Filtering and Variant Analysis (45 min)](#block-3-high-confidence-filtering-and-variant-analysis)
+   * [Wrap-up of Comparison and Biological Interpretation (15 min)](#wrap-up-of-comparison-and-biological-interpretation-15-min)
+
 
 
 ## Workshop Plan
@@ -380,7 +381,8 @@ column -t
 
 
 
-### Wrap-up of Comparison and Biological Interpretation
+### Wrap-up of Comparison and Biological Interpretation (15 min)
+
 1. **No Overlap with High-Quality Variants**:
    - The majority of the CDS regions have 0 SNPs => highly conserved
 
