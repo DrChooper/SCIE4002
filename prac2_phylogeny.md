@@ -15,14 +15,13 @@ Each block includes a clear goal and checkpoint. As before, code along as you go
    * [Block 1: Minhash and Neighbour-joining (25 min)](#block-1-minhash-and-neighbour-joining-25-min)
    * [Block 2: Maximum Likelihood Tree with IQTREE2 (60 min)](#block-2-maximum-likelihood-tree-with-iqtree2-60-min)
    * [Block 3: Bayesian Tree with MrBayes (60 min)](#block-3-bayesian-tree-with-mrbayes-60-min)
-   * [Wrap-up and Comparison (15 min)](#wrap-up-and-comparison-15-min)
+   * [Comparison: Mashtree - IQtree - MrBayes - Taxonomy](#comparison-mashtree---iqtree---mrbayes---taxonomy)
+  
 
-
-# Workshop 2: Phylogeny
 
 ## Workshop Plan
 
-### Recap: Why do we build phylogenies? (20 min)
+### Recap: What do use phylogenetic trees for? (20 min)
 
 * Phylogenetic trees are models of evolutionary relationships based on shared ancestry.
 * Tree topology reflects how sequences or species diverged over time.

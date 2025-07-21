@@ -35,8 +35,3 @@ Interpretation notes:
 - Tree is unrooted; use a known outgroup (e.g. Liriodendron) to root
 - Codon model captures reading-frame-specific substitution patterns
 - All nodes show high support (mostly 100%)
-
-Citations:
-- IQ-TREE2: Minh et al. 2020 (Mol Biol Evol)
-- ModelFinder: Kalyaanamoorthy et al. 2017 (Nat Methods)
-- UFBoot2: Hoang et al. 2018 (Mol Biol Evol)
