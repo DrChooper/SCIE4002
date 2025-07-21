@@ -21,7 +21,7 @@ In this practical, students annotate the chloroplast genome of *Aldrovanda vesic
 >**Note:** This course avoids custom scripts. Standard tools are used wherever possible.
 
 
-<!-- ## 2. Phylogeny
+## 2. Phylogeny
 
 This practical introduces students to phylogenetic tree building using two approaches: **MinHash with neighbour-joining** and **maximum likelihood** with IQ-TREE2. A third method, **Bayesian inference** with MrBayes, is discussed conceptually to highlight differences in statistical frameworks and runtime considerations. Students align chloroplast genes, build and interpret trees, and evaluate method accuracy and speed. Skills include working with Newick format, model selection, and phylogenetic visualisation.
 
@@ -36,9 +36,9 @@ Here’s a streamlined summary section for this practical, formatted to match yo
 
 This practical focuses on detecting and interpreting chloroplast genome variation across *Aldrovanda* specimens. Students learn to align sequencing reads to a reference, perform variant calling before and after contamination filtering, and assess data quality impacts on results. The final step maps high-confidence variants to annotated genes. Key skills include short-read mapping, VCF interpretation, basic filtering logic, and critical evaluation of technical artefacts in variant detection.
 
-[→ View Practical 3: Variant Analysis](prac3_variants.md)
+[→ View Practical 3: Intraspecific Variance](prac3_variants.md)
 
-**Key tools**: BBMap, `samtools`, `bcftools`, `bedtools`, Unix shell utilities. -->
+**Key tools**: BBMap, `samtools`, `bcftools`, `bedtools`, Unix shell utilities
 
 
 <!-- ## 4. Research Projects
