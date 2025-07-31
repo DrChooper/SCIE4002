@@ -18,19 +18,18 @@ In this practical, students annotate the chloroplast genome of *Aldrovanda vesic
 
 **Key tools**: GeSeq, Chloë, awk, sed, grep, MAFFT, . 
 
->**Note:** This course avoids custom scripts. Standard tools are used wherever possible.
-
+In the link you find a streamlined summary of this section as well as a code along.
 
 ## 2. Phylogeny
 
-This practical introduces students to phylogenetic tree building using two approaches: **MinHash with neighbour-joining** and **maximum likelihood** with IQ-TREE2. A third method, **Bayesian inference** with MrBayes, is discussed conceptually to highlight differences in statistical frameworks and runtime considerations. Students align chloroplast genes, build and interpret trees, and evaluate method accuracy and speed. Skills include working with Newick format, model selection, and phylogenetic visualisation.
+This practical introduces students to phylogenetic tree building using two approaches: MinHash with neighbour-joining and maximum likelihood with IQ-TREE2. A third method, Bayesian inference with MrBayes, is discussed conceptually to highlight differences in statistical frameworks and runtime considerations. Students align chloroplast genes, build and interpret trees, and evaluate method accuracy and speed. Skills include working with Newick format, model selection, and phylogenetic visualisation.
 
 [→ View Practical 2: Phylogeny](prac2_phylogeny.md)
 
 **Key tools**: Mashtree.jl, IQ-TREE2, MAFFT, iTOL, standard shell utilities.
 **Mentioned**: MrBayes (concept only).
 
-Here’s a streamlined summary section for this practical, formatted to match your previous entries. I’ve also suggested a **revised title** that reflects the broader scope, as “Variant Calling” undersells the full workflow.
+In the link you find a streamlined summary of this section as well as a code along.
 
 ## 3. Intraspecific Variance
 
@@ -41,8 +40,10 @@ This practical focuses on detecting and interpreting chloroplast genome variatio
 **Key tools**: BBMap, `samtools`, `bcftools`, `bedtools`, Unix shell utilities
 
 
-<!-- ## 4. Research Projects
+## 4. Research Projects
 
+* Onboarding will appear here shortly
+<!-- 
 Students will complete a **guided research project in small groups of 4 members**, working independently to analyse a real genomic dataset. Each group is provided with a defined question, rationale, and hypothesis. The focus is on conducting reproducible analyses and interpreting results using skills from the annotation, phylogenetics, and variant analysis practicals.
 
 While collaboration is essential, each student is responsible for writing their own report, demonstrating their understanding of the dataset and findings. Group work must also be managed with clear roles, regular check-ins, and fair contribution from all members.
@@ -59,6 +60,9 @@ While collaboration is essential, each student is responsible for writing their 
  -->
 
 ## Resources 
+>**Note:** This course avoids custom scripts. Standard tools are used wherever possible. Some custom script were unavoidable.
+
+
 Here the list of resources I installed for this prac. So if you go work or study somewhere and you need these tools, they are all freely available. (Installation may vary depending on your set up)
 
 ### Chloe local install
@@ -88,15 +92,5 @@ Install guide using micromamba:
 
 ```bash
 #create envrionment
-micromamba create -n scie4002 \
-  -c conda-forge -c bioconda -c defaults \
-  mafft \
-  mashtree \
-  iqtree \
-  mrbayes \
-  bbmap \
-  samtools \
-  bcftools \
-  bedtools \
-  getorganelle
+micromamba create -n scie4002 -c conda-forge -c bioconda mafft mashtree iqtree mrbayes bbmap samtools bcftools bedtools getorganelle
 ```
