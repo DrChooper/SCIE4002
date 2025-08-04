@@ -42,11 +42,11 @@ This practical focuses on detecting and interpreting chloroplast genome variatio
 
 ## 4. Research Projects
 
-* Onboarding will appear here shortly
-<!-- 
-Students will complete a **guided research project in small groups of 4 members**, working independently to analyse a real genomic dataset. Each group is provided with a defined question, rationale, and hypothesis. The focus is on conducting reproducible analyses and interpreting results using skills from the annotation, phylogenetics, and variant analysis practicals.
+You will complete a guided research project in small groups of 4 members, working independently to analyse a real genomic dataset. Each group is provided with the background and hypotheses around the data that was created. The focus is on conducting reproducible analyses and interpreting results using skills learned in practicals.
 
-While collaboration is essential, each student is responsible for writing their own report, demonstrating their understanding of the dataset and findings. Group work must also be managed with clear roles, regular check-ins, and fair contribution from all members.
+Working effectively in a research team is a critical professional skill in science. This project is designed to help you develop collaboration, communication, time management, and problem-solving skills that are highly valued by employers. Active participation and equitable contribution from all members are expected.
+
+While collaboration is essential, each student is responsible for writing their own report, demonstrating their understanding of the dataset and findings. 
 
 **Expected outcomes**:
 
@@ -55,6 +55,9 @@ While collaboration is essential, each student is responsible for writing their 
 * Group accountability and evidence of participation
 * Clear biological interpretation of results
 
+**Onboarding of projects will happen very soon!**
+
+<!-- 
 [→ View Project Briefs](project_onboarding.md
 )
  -->

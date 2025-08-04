@@ -81,7 +81,7 @@ From this point on, follow along with the commands. Ask for help if you fall beh
 
      ```bash
      #replace with your username and server ip number
-     scp studentaccount@yourserverip:$sourcedir/aldrovanda_vesiculosa/Av.cp.final.fasta .
+     scp s-XXX@yourserverip:/mnt/s-ws/everyone/annotation/aldrovanda_vesiculosa/Av.cp.final.fasta .
      ```
 
 
@@ -183,13 +183,14 @@ cut -f 3 Av.geseq.txt | uniq | wc -l
 Use `comm` to identify differences between gene lists:
 
 ```bash
-comm -3 <(cut -f 3 Av.geseq.txt | sort) <(cut -f 3 Av.chloe.txt | sort)
+comm -3 <(cut -f 3 Av.geseq.txt | sort ) <(cut -f 3 Av.chloe.txt | sort)
 ```
 This shows genes unique to GeSeq (left column) and unique to Chloë (right column).
 We use [process substitution](https://www.gnu.org/software/bash/manual/html_node/Process-Substitution.html) to compare sorted output directly.
 
-Some GeSeq annotations include genes marked as `-fragment`, which may represent pseudogenes, low confidence or partial hits.
-To clean up the names but include the hits we delete `-fragment` from the name:
+Some GeSeq annotations include genes marked as `-fragment`, which may represent pseudogenes, low confidence or partial hits. **Depending on what you are trying to do you can remove the annotation (reject gene) or alter the name to match (accept gene)**
+
+To keep genes we clean up the names we delete `-fragment` from the name:
 
 ```bash
 sed -E -i 's/-fragment//' Av.geseq.txt
@@ -222,14 +223,17 @@ This highlights line-by-line differences between the two annotation outputs.
 
 1. Download and install IGV:
    [https://software.broadinstitute.org/software/igv/download](https://software.broadinstitute.org/software/igv/download)
+   
+   * [Tutorial for using IGV](https://www.youtube.com/watch?v=E_G8z_2gTYM)
+   * 
 
 2. Load the files:
 
-   * `Av.cp.final.fasta` → Genome
-   * `Av.geseq.gff3` → Annotation track
+   * `Av.cp.final.fasta` → Genome > Load Genome from File
+   * `Av.geseq.gff3` → Annotation track (File > Load From File)
    * `Av.chloe.gff3` → Second annotation track
 
-You’ll see that annotations can differ substantially, even on the same genome, depending on the tool used.
+You’ll see that annotations can differ, even on the same genome, depending on the tool used.
 
 **Takeaway:** For consistent comparisons across multiple genomes, always use the same annotation pipeline. Differences in tools can introduce more noise than actual biological variation
 
@@ -385,7 +389,10 @@ while read -r id start end strand
   done < rpoC2.tsv
 ```
 
-Copy FASTA sequences:
+*The modulus is important as we need to make sure the sequence can be divided up in codons. You can also check if the sequence starts with a start codon and ends with a stop codon etc*
+
+
+Copy FASTA sequences into your chloe folder:
 
 ```bash
 cp $sourcedir/*.fasta chloe/
