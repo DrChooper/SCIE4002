@@ -85,7 +85,7 @@ If time:
 ## Code along
 ### Block 1: Minhash and Neighbour-joining (25 min)
 
-Minhash is used to quickly estimate Jaccard similarity between genomic datasets based on k-mers (substrings of fixed length). This distance relationship can be used to construct relational trees by methods such as NJ or ML. 
+Minhash is used to quickly estimate Jaccard similarity between genomic datasets based on k-mers (substrings of fixed length). This distance relationship can be used to construct relational trees by methods such as NJ. 
 
 Step 1: Set yourself up in the server
 Log onto the server and activate the software environment
@@ -148,15 +148,18 @@ IQTREE2 is a versatile software tool used for constructing phylogenetic trees ba
 - First we will make a codon alignment using the multiple sequence alignment of proteins you made in the 'Annotation' module to guide the alignment of the corresponding nucleotide sequences
 
 ```bash
+#go to your folder
+cd rpoC2
+# combine all nuclotide sequences
 cat *.rpoC2.nt.fa > allrpoC2.nt.fa
-#the below calls to run the julia script
+#the below calls to run the julia script to guide alignment to codons
 nt2codon.jl rpoC2.protein.msa allrpoC2.nt.fa rpoC2.codon.msa
 less rpoC2.codon.msa
 ```
 
 - Now we can use iqtree2 to construct a phylogenetic tree by maximum likelihood using this data.
-- `-T 16` tells iqtree2 to use 16 parallel 'threads' so that it can use multiple processors in the server simultaneously.
-- `-st` CODON tells iqtree2 to use codon models for sequence evolution.
+- `-T 8` tells iqtree2 to use 8 parallel 'threads' so that it can use multiple processors in the server simultaneously (makes it quicker).
+- `-st` CODON tells iqtree2 that we are using sequence data in codon alignment.
 - `-o` is telling iqtree2 what the outgroup taxon is so it can root the trees correctly.
 - `--alrt 1000` and `-B 1000` tell iqtree2 to estimate the confidence in the branches in the tree using 1000 replicates using an approximate likelihood ratio test (`--alrt`) and a conventional bootstrap test (`-B`). Much more info on [IQ-TREE here](http://www.iqtree.org/doc/)
 
@@ -202,14 +205,14 @@ less rpoC2.codon.msa.iqtree
 
 IQ-TREE produces multiple tree files. Here are the key differences:
 
-- `*.treefile`: This is the best maximum likelihood (ML) tree. It is the single most likely tree based on your data and model.
+- `*.treefile`: This is the best maximum likelihood (ML) tree. It is the single most likely tree based on your data and model.(has not support values)
 - `*.contree`: This is the consensus tree from the bootstrap replicates. It shows only the relationships supported by a majority (e.g. 95%) of bootstrap trees.
 
 Summary:
 - Use the `.treefile` for downstream analysis or further inference.
 - Use the `.contree` for visualisation and reporting with support values.
 
-Use the treefile and replace IDs as previously and look at it in iTOL.
+Use the consensus treefile and replace IDs as previously and look at it in iTOL.
 
 ```bash
 tree="xxx"
@@ -323,6 +326,14 @@ mcmc
   * Average SD of split frequencies = 0.009821 → acceptable convergence
   * Harmonic mean of likelihoods: -18045.48 (run1), -18008.86 (run2)  
   * Best model: gtrsubmodel\[123454] with posterior prob. 0.375
+    * GTR = General Time Reversible Model
+    > *Note: In a GTR submodel `[123454]`, the six possible nucleotide substitutions share rates according to their numeric labels:*
+    > - A↔C = rate1  
+    > - A↔G = rate2  
+    > - A↔T = rate3  
+    > - C↔G = rate4  
+    > - C↔T = rate5  
+    > - G↔T = rate4
 
 
 * Use `sumt` to **generate and view the consensus tree** with support values:
@@ -333,8 +344,11 @@ mcmc
 
   * 42 trees read, 32 sampled after discarding 25 percent burn-in
   * Most clades have posterior probability of 1.0, indicating strong support
+    * >0.9 is considered strong support
+    * <0.9 is considered to have uncertaincy
   * Split frequency 0.0098 and PSRF around 1.0 show good convergence across runs
   * shows the tree structures in terminal
+
 
 * Exit MrBayes:
 
@@ -366,7 +380,11 @@ done < <(tail -n +2 "$sourcedir/genome_metadata.tsv")
 echo "$tree" > rpoC2.codon.mb.nex
 ```
 
-- paste the Nexus tree into iTOL
+- paste the Nexus tree into iTOL (to display use the cat command)
+```bash
+cat rpoC2.codon.mb.nex
+```
+
 
 **If we do not get to the end today try it later and leave your computer running**
 
@@ -389,6 +407,23 @@ Now compare all 3 trees and all three computing times.
 - Which is the most accurate?
 
 
+### Wrap-up (15 min): Compare all three trees and methods
+
+Which is fastest?
+
+Which gives the most statistical confidence?
+
+Are the topologies consistent or conflicting?
+
+What did you learn about *Aldrovanda* and its place in the tree?
+
+What method would you use for clesely related species?
+
+What method would you use for a large data set?
+
+Could you combined these methods?
+
+
 ### Tree File Cheatsheet
 
 Use the links below to access and download the tree files used in this workshop. You can paste the contents into iTOL (https://itol.embl.de/) or other tree visualization tools.
@@ -400,4 +435,5 @@ Use the links below to access and download the tree files used in this workshop.
 - [MrBayes (accession labels)](assets/cheats/mrbayes.nex)
 - [MrBayes (NCBI taxon IDs)](assets/cheats/mrbayes_NCBI_taxaID.nex)
 - [Taxonomy reference tree](assets/cheats/taxonomy.nwk)
+
 

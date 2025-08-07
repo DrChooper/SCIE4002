@@ -62,22 +62,20 @@ This practical is divided into three blocks. Each block has a clear goal and che
 
 From this point on, follow along with the commands. Ask for help if you fall behind.
 
+This first part is not on run on the server, we will start using the web interface
+
 #### Getting the FASTA file
 
-1. Set your source directory  
-   ```bash
-   #activate my environment
-   conny activate
-   #to save you typing path again and again set the directory
-   sourcedir=/mnt/s-ws/everyone/annotation
-   ```
    
-2. You’ll need the FASTA file on your computer. You can either:
+* You’ll need the FASTA file on your computer. You can either:
+  - **Downloaded from LMS** This is the easiest. Find it in the Learning materials. 
+
+ 
    - **Download it directly from GitHub:**  
    [![Download FASTA](https://img.shields.io/badge/Download-Av.cp.final.fasta-blue?style=for-the-badge&logo=github)](https://github.com/DrChooper/SCIE4002/raw/main/assets/Av.cp.final.fasta)
 
 
-   - **OR copy it from the server using `scp`:**
+   - **OR copy it from the server using filezilla or `scp`:**
 
      ```bash
      #replace with your username and server ip number
@@ -95,7 +93,7 @@ From this point on, follow along with the commands. Ask for help if you fall beh
 3. When GeSeq finishes:
    - Download the GFF file
    - Rename it to something simple, e.g. `Av.geseq.gff3`
-   - Upload it to your home directory on the server using either a GUI or:
+   - Upload it to your home directory on the server using either a GUI (e.g. filezilla) or:
 
      ```bash
      scp Av.geseq.gff3 studentaccount@yourserverip:~/
@@ -121,7 +119,17 @@ From this point on, follow along with the commands. Ask for help if you fall beh
 
 #### Check annotations (on the server)
 
-We now move to working **on the server**. Use `less` to view both GFF files. Press `q` to exit.
+We now move to working **on the server**. Log on using your user credentials.
+
+Set your source directory: 
+  ```bash
+  #activate my environment (software)
+  conny activate
+  #to save you typing path again and again set the directory
+  sourcedir=/mnt/s-ws/everyone/annotation
+ ```
+
+Use `less` to view both GFF files. Press `q` to exit.
 
 ```bash
 less Av.geseq.gff3
@@ -285,7 +293,7 @@ cat $sourcedir/cp_proteins.csv | column -t -s, | sort | less -S
 Extract gene names:
 
 ```bash
-cut -d ',' -f 1 $sourcedir/cp_proteins.csv | tail -n +2 | uniq > gene_names.txt
+cut -d ',' -f 1 "$sourcedir/cp_proteins.csv" | tail -n +2 | sort | uniq > gene_names.txt
 less gene_names.txt
 ```
 
