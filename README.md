@@ -57,10 +57,9 @@ While collaboration is essential, each student is responsible for writing their 
 
 **Onboarding of projects will happen very soon!**
 
-<!-- 
-[→ View Project Briefs](project_onboarding.md
+[→ View Project Briefs ](project_onboarding.md
 )
- -->
+
 
 ## Resources 
 >**Note:** This course avoids custom scripts. Standard tools are used wherever possible. Some custom script were unavoidable.
@@ -80,15 +79,15 @@ Pkg.add("https://github.com/ian-small/Chloe.jl)
 You can install micromamba or anaconda to create the environment use in this prac and then add the packages into it. Most palcgae are available through the bioconda or conda-forge channel.
 
 #### links
-https://anaconda.org/bioconda/getorganelle
-https://anaconda.org/bioconda/mafft
-https://anaconda.org/bioconda/mashtree
-https://anaconda.org/bioconda/iqtree
-https://anaconda.org/bioconda/mrbayes
-https://anaconda.org/bioconda/bbmap
-https://anaconda.org/bioconda/samtools
-https://anaconda.org/bioconda/bcftools
-https://anaconda.org/bioconda/bedtools
+* https://anaconda.org/bioconda/getorganelle
+* https://anaconda.org/bioconda/mafft
+* https://anaconda.org/bioconda/mashtree
+* https://anaconda.org/bioconda/iqtree
+* https://anaconda.org/bioconda/mrbayes
+* https://anaconda.org/bioconda/bbmap
+* https://anaconda.org/bioconda/samtools
+* https://anaconda.org/bioconda/bcftools
+* https://anaconda.org/bioconda/bedtools
 
 
 Install guide using micromamba:
